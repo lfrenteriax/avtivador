@@ -1,4 +1,5 @@
-  // Load the IFrame Player API code asynchronously.
+/*  
+// Load the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/player_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -43,3 +44,5 @@
 
 
 var  gnrBtn =document.getElementById('gnrBtn');
+*/
+alert("hola")
