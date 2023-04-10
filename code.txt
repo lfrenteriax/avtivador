@@ -1,0 +1,19 @@
+const options = {
+    	method: 'POST',
+    	'referer': 'https://tv.teleclub.xyz/activar',
+    	'Content-Type': 'application/x-www-form-urlencoded',
+    	'Content-Length': '0',
+	};
+
+	let result = '';
+	const data = "submit=ACTIVAR%2BAHORA";
+	request.post({url:'http://tv.teleclub.xyz/activar',body:data,headers: { 'Content-Type': 'application/x-www-form-urlencoded','referer': 'https://tv.teleclub.xyz/activar'}}, function(err,httpResponse,body)
+	{
+	 /* ... */
+	 	console.log(httpResponse);
+	 	result="NO ACTIVADO";
+	 	if(httpResponse.body.search('Activado')>0)
+	 	result="ACTIVADO";	
+	    back.send("hello from back", result);
+
+	})
