@@ -45,4 +45,10 @@
 
 var  gnrBtn =document.getElementById('gnrBtn');
 */
+function activar() {
+    // body...
+    alert('Activando');
+    document.getElementById('msg').innerHTML= "Activando";
+    front.send("hello from front");
+  }
 alert("hola")
