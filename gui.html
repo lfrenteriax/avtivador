@@ -1,67 +1,10 @@
 <script src="https://www.youtube.com/iframe_api"></script>
+<iframe onclick="activar()" id="video" width="100%" height="75%" src="https://www.youtube.com/embed/ics76K5KvjA?mute=1&loop=1" frameborder="0" allow="autoplay" encrypted-media allowfullscreen></iframe>
 
 <div class="container h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
-      <h3 class="display-3" id='msg'>Activar</h3>
+      <h3 class="display-3" onclick="activar()" id='msg'>Activar</h3>
       <button onclick="activar()">Activar</button>
-      <button id='subs' onclick="window.open('https://www.youtube.com/user/lfrenteriax?sub_confirmation=1','MsgWindow','width=300,height=250');">
-    
-  </button>
-
 
     </div>
  </div>
-
-<div id="ytplayer"></div>
-
-  <button id='gnrBtn' onclick="generarUrl()">
-    Crear lista
-  </button>
-  <script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
-      videoId: 'ics76K5KvjA',
-      loop: 1,
-      events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-    });
-
-
-  }
-  var onePlay=0;
-  function onPlayerReady(event) {
-        event.target.playVideo();
-        player.mute();
-      }
-  function onPlayerStateChange(event) {
-    console.log( YT.PlayerState.PLAYING)
-    console.log(player.getPlayerState())
-    if(!player.getPlayerState())
-      onePlay=1;
-    if (player.getPlayerState()!=2 && onePlay)
-      gnrBtn.style.display='block';
-    else{
-      gnrBtn.style.display='none';
-      if(player.getPlayerState()==2)
-        alert('no pause el video...');
-    }
-
-  }
-
-
-var  gnrBtn =document.getElementById('gnrBtn');
-
-</script>
