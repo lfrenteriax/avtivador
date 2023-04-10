@@ -51,4 +51,4 @@ function activar() {
     document.getElementById('msg').innerHTML= "Activando";
     front.send("hello from front");
   }
-alert("hola")
+alert("hola");
